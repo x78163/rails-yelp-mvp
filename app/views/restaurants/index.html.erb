@@ -1,0 +1,16 @@
+
+<h1>Joe's Yelp Site!!!</h1>
+<% @restaurants.each do |a| %>
+<h2><%= link_to a.name, restaurant_path(a) %> </h2>
+<h3><%=a.phone_number%></h3>
+<h3><%=a.address%></h3>
+<h3><%=a.category%></h3>
+
+(<%= link_to "Delete", restaurant_path(a),
+method: :delete,
+data: { confirm: "are you sure" } %>)
+
+
+<% end %>
+<%= link_to "New Record", new_restaurant_path %>
+<%= link_to "Home", restaurants_path %>
